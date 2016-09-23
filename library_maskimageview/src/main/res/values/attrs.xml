@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--形状遮罩-->
+    <declare-styleable name="MaskImageView">
+        <attr name="center" format="boolean" />
+        <attr name="mask_shape">
+            <enum name="circle" value="0" />
+            <enum name="round_rect" value="1" />
+        </attr>
+        <attr name="mask_mode">
+            <enum name="shader" value="0" />
+            <enum name="xfermode" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>
