@@ -24,21 +24,20 @@
 - 在代码中设置自定义遮罩
 
 ```java
-mMaskImageView = (MaskImageView) findViewById(R.id.miv_content);
-    mMaskImageView.setDrawMask(new MaskImageView.DrawMask() {
-        Path mPath = new Path();
+mMaskImageView.setDrawMask(new MaskImageView.DrawMask() {
+    Path mPath = new Path();
 
-        @Override
-        public void onDrawMask(Canvas canvas, Paint paint, @Px int viewW, @Px int viewH) {
-            mPath.reset();
-            mPath.moveTo(viewW / 4, 0);
-            mPath.lineTo(viewW / 4 * 3, 0);
-            mPath.lineTo(viewW, viewH);
-            mPath.lineTo(0, viewH);
-            mPath.close();
-            canvas.drawPath(mPath, paint);
-        }
-    });
+    @Override
+    public void onDrawMask(Canvas canvas, Paint paint, @Px int viewW, @Px int viewH) {
+        mPath.reset();
+        mPath.moveTo(viewW / 4, 0);
+        mPath.lineTo(viewW / 4 * 3, 0);
+        mPath.lineTo(viewW, viewH);
+        mPath.lineTo(0, viewH);
+        mPath.close();
+        canvas.drawPath(mPath, paint);
+    }
+});
 ```
 
 ![round](https://github.com/wangruning/MyMaskImageView/blob/master/image/custom_mask.png)
